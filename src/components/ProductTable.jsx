@@ -1,5 +1,7 @@
 import { Button, Table } from '@heroui/react';
 import React from 'react';
+import { DeleteModal } from './DeleteModal';
+import Link from 'next/link';
 
 const ProductTable = ({productData}) => {
 
@@ -7,7 +9,7 @@ const ProductTable = ({productData}) => {
     <div>
        <Table>
       <Table.ScrollContainer>
-        <Table.Content aria-label="Team members" className="min-w-[600px]">
+        <Table.Content aria-label="Team members" className="min-w-150">
           <Table.Header>
             <Table.Column isRowHeader>Product Name</Table.Column>
             <Table.Column>Price</Table.Column>
@@ -22,8 +24,10 @@ const ProductTable = ({productData}) => {
               <Table.Cell>{product.price}</Table.Cell>
               <Table.Cell>{product.stock}</Table.Cell>
               <Table.Cell className={'flex gap-2'}>
-              <Button variant='outline'>Edit</Button>
-              <Button variant='danger-soft'>delete</Button>
+            <Link href={`/products/${product._id}/edit`}>  <Button variant='outline'>Edit</Button></Link>
+              <DeleteModal
+              productId={product._id}
+               />
               </Table.Cell>
             </Table.Row>
             })
