@@ -5,7 +5,7 @@ import React from 'react';
 const EditProductPage = async ({params}) => {
   const {id} = await params;
   const product = await getProductById(id)
-  console.log(product);
+  // console.log(product);
  
   return (
     <div>

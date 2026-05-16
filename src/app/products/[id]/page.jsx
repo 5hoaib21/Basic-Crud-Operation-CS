@@ -8,7 +8,7 @@ const ViewDetailPage = async ({ params }) => {
   // const res = await fetch(`http://localhost:8008/products/${id}`)
   // const data = await res.json();
   const data = await getProductById(id)
-  console.log(data); 
+  // console.log(data); 
 const {title, description, price, stock} = data;
   return <div className="container mx-auto mt-10 space-y-5">
   <h1>view detail page</h1>
